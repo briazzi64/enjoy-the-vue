@@ -1,0 +1,11 @@
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.renderWhitespace": "all",
+  "eslint.alwaysShowStatus": true,
+  "editor.formatOnSave": true
+}
