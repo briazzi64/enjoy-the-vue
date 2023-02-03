@@ -16,7 +16,7 @@
     that matches the path called out above and use <code>createApp()</code>. Our
     JS will look something like this.
   </p>
-  <img src="/main.png" />
+  <img src="/createApp.png" />
   <p>
     <code>App.vue</code> is our root component so once that file has been
     created and mounted properly then our Vue instance is ready to go and we can
