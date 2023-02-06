@@ -3,7 +3,6 @@
     "vue.volar",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "stylelint.vscode-stylelint",
-    "bierner.color-info"
+    "stylelint.vscode-stylelint"
   ]
 }

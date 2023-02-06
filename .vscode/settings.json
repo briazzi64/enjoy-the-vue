@@ -6,6 +6,5 @@
     "source.fixAll": true
   },
   "editor.renderWhitespace": "all",
-  "eslint.alwaysShowStatus": true,
   "editor.formatOnSave": true
 }

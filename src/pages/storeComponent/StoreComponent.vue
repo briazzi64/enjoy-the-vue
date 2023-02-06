@@ -6,8 +6,8 @@
       input-id="firstName"
       label="First Name"
     />
-    <InputComponent v-model="lastName" input-id="lastName" label="Last Name" />
-    <ButtonComponent :disabled="!formIsValid" button-type="submit">
+    <InputComponent id="lastName" v-model="lastName" label="Last Name" />
+    <ButtonComponent :disabled="!formIsValid" type="submit">
       Submit
     </ButtonComponent>
   </form>
@@ -21,9 +21,9 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import InputComponent from '../todoComponent/components/Input.vue';
-import ButtonComponent from '../todoComponent/components/Button.vue';
 import { useUserStore } from '../../store';
+import InputComponent from '../../components/Input.vue';
+import ButtonComponent from '../../components/Button.vue';
 
 const userStore = useUserStore();
 

@@ -1,6 +1,6 @@
 <template>
   <button
-    :type="buttonType"
+    :type="type"
     :class="color"
     :disabled="disabled"
     @click="$emit('button-clicked')"
@@ -19,7 +19,7 @@ defineProps({
     type: Boolean,
     default: false
   },
-  buttonType: {
+  type: {
     type: String,
     default: 'button'
   }

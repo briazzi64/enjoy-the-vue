@@ -1,7 +1,7 @@
 <template>
-  <label :for="inputId">{{ label }}</label>
+  <label :for="id">{{ label }}</label>
   <input
-    :id="inputId"
+    :id="id"
     :value="modelValue"
     @input="$emit('update:modelValue', $event.target.value)"
   />
@@ -17,7 +17,7 @@ defineProps({
     type: String,
     required: true
   },
-  inputId: {
+  id: {
     type: String,
     required: true
   }

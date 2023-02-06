@@ -1,8 +1,8 @@
 <template>
   <h1>Todo Component</h1>
   <form @submit.prevent="addTodo">
-    <InputComponent v-model="newTodo" input-id="newTodo" label="New Todo" />
-    <ButtonComponent :disabled="!newTodo.length" button-type="submit">
+    <InputComponent id="newTodo" v-model="newTodo" label="New Todo" />
+    <ButtonComponent :disabled="!newTodo.length" type="submit">
       Submit
     </ButtonComponent>
     <ButtonComponent
@@ -18,20 +18,20 @@
 </template>
 
 <script setup>
-import { ref, watchEffect, computed } from 'vue';
+import { ref, watchEffect } from 'vue';
 import fetchTodos from '../../api/todos';
-import InputComponent from './components/Input.vue';
-import ButtonComponent from './components/Button.vue';
-import TableComponent from './components/Table.vue';
+import InputComponent from '../../components/Input.vue';
+import ButtonComponent from '../../components/Button.vue';
+import TableComponent from '../../components/Table.vue';
 
 const apiResponse = ref([]);
+const todos = ref([]);
 watchEffect(async () => {
   apiResponse.value = await fetchTodos();
+  todos.value = apiResponse.value
+    .map((todo) => [todo.title, todo.completed])
+    .slice(0, 10);
 });
-
-const todos = computed(() =>
-  apiResponse.value.map((todo) => [todo.title, todo.completed]).slice(0, 10)
-);
 
 const newTodo = ref('');
 function resetNewTodo() {
