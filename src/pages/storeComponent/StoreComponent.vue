@@ -1,18 +1,14 @@
 <template>
   <h1>Store Component</h1>
   <form v-if="!userStore.userIsLoggedIn" @submit.prevent="submitUserName()">
-    <InputComponent
-      v-model="firstName"
-      input-id="firstName"
-      label="First Name"
-    />
+    <InputComponent id="firstName" v-model="firstName" label="First Name" />
     <InputComponent id="lastName" v-model="lastName" label="Last Name" />
     <ButtonComponent :disabled="!formIsValid" type="submit">
       Submit
     </ButtonComponent>
   </form>
   <template v-else>
-    <p>Thank you for loggin in {{ userStore.fullUserName }}</p>
+    <p>Thank you for logging in {{ userStore.fullUserName }}</p>
     <ButtonComponent @button-clicked="userStore.logUserOut">
       Log Out
     </ButtonComponent>
