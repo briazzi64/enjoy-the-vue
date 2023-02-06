@@ -16,4 +16,6 @@
     type of the prop we are expecting, a default value, and if the prop is
     required for the component to properly function.
   </p>
+  <p>Here is an example of a button component that takes three props:</p>
+  <img src="props.png" />
 </template>

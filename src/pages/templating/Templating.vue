@@ -29,15 +29,15 @@
         <button
           v-for="(component, index) in components"
           :key="component"
-          :class="['tab-button', { active: currentComponent === index }]"
-          @click="currentComponent = index"
+          :class="['tab-button', { active: currentComponentIndex === index }]"
+          @click="currentComponentIndex = index"
         >
           {{ component.displayName }}
         </button>
       </div>
     </div>
     <div class="tab-content">
-      <component :is="components[currentComponent].componentName" />
+      <component :is="components[currentComponentIndex].componentName" />
     </div>
   </div>
 </template>
@@ -52,7 +52,7 @@ import RenderingLoops from './components/RenderingLoops.vue';
 import EventBinding from './components/EventBinding.vue';
 import VModel from './components/VModel.vue';
 
-const currentComponent = ref(0);
+const currentComponentIndex = ref(0);
 const components = [
   {
     displayName: 'Text Interpolation',

@@ -3,21 +3,20 @@
   <p>
     Using <code>v-on</code> (or the shorthand <code>@</code>) we can attach an
     event to any element on the page. From there you can either handle your
-    events inline or by passing a function. For example, you could do either of
-    these options:
+    events inline or by passing a function. For example, you could do this to
+    increase the <code>count</code> data by 1
   </p>
-  <ul>
-    <li>
-      <code v-pre
-        >&lt;button @click="count++"&gt;{{ count }}&lt;/button&gt;</code
-      >
-    </li>
-    <li>
-      <code v-pre
-        >&lt;button @click="increment()"&gt;{{ count }}&lt;/button&gt;</code
-      >
-    </li>
-  </ul>
+  <code v-pre>&lt;button @click="count++"&gt;{{ count }}&lt;/button&gt;</code>
+  <p>Or this to call the <code>increment</code> function.</p>
+  <code v-pre
+    >&lt;button @click="increment()"&gt;{{ count }}&lt;/button&gt;</code
+  >
+  <p>
+    Any standard JavaScript event like blur, focus, or click can be attached. Or
+    if you create custom events for your Vue components they can be attached as
+    well.
+  </p>
+  <h3>Event Modifiers</h3>
   <p>
     It is a very common need to call <code>event.preventDefault()</code> or
     <code>event.stopPropagation()</code>

@@ -13,6 +13,8 @@
     look something like this .
   </p>
   <code>@click="$emit('button-clicked')"</code>
+  <p>That would look something like this:</p>
+  <img src="emit.png" />
   <p>
     Lastly, you'll need to listen for the event where you included your
     component. Using <code>@</code> and the name of your emit, you'll add that
@@ -23,4 +25,6 @@
     Above, <code>doSomething()</code> is a function inside of the parent
     component.
   </p>
+  <p>That would look something like this:</p>
+  <img src="listenEmit.png" />
 </template>

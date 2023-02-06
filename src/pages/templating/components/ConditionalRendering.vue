@@ -2,8 +2,8 @@
   <h2>Conditional Rendering</h2>
   <p>
     The ability to conditionally render markup based on our component's data is
-    a very powerful feature with Vue's templating engine. Unlike JSX, you will
-    put conditions directly on your template elements to decide if they should
+    a very powerful feature with Vue's templating engine. Vue allows you to put
+    conditions directly on your template elements to decide if they should
     render or not. Below are the major template conditionals you can use
   </p>
   <ul>
@@ -48,10 +48,14 @@
   <p v-else-if="activeSeason === 'summer'">Pool Party &#127946;</p>
   <p v-else-if="activeSeason === 'fall'">Halloween &#127875;</p>
   <p v-else>BRRRRR &#9924;</p>
+  <hr />
+  <button @click="show = !show">Toggle Show</button>
+  <p v-if="show">No <code v-pre>display: none;</code></p>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 
-const activeSeason = ref('winter');
+const activeSeason = ref('spring');
+const show = ref(true);
 </script>

@@ -6,15 +6,15 @@
         <button
           v-for="(component, index) in components"
           :key="component"
-          :class="['tab-button', { active: currentComponent === index }]"
-          @click="currentComponent = index"
+          :class="['tab-button', { active: currentComponentIndex === index }]"
+          @click="currentComponentIndex = index"
         >
           {{ component.displayName }}
         </button>
       </div>
     </div>
     <div class="tab-content">
-      <component :is="components[currentComponent].componentName" />
+      <component :is="components[currentComponentIndex].componentName" />
     </div>
   </div>
 </template>
@@ -29,7 +29,7 @@ import Watchers from './components/Watchers.vue';
 import Slots from './components/Slots.vue';
 import Dynamic from './components/Dynamic.vue';
 
-const currentComponent = ref(0);
+const currentComponentIndex = ref(0);
 const components = [
   {
     displayName: 'Creating and Using Components',

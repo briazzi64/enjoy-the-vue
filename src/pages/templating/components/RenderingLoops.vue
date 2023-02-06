@@ -15,15 +15,43 @@
   <code v-pre
     >&lt;li v-for="month in months" :key="month"&gt;{{ month }}&lt;/li&gt;</code
   >
-  <p>
-    Note the <code>:key</code> next to the <code>v-for</code>. That is a special
-    Vue uses to properly track and change elements when the data updates. You'll
-    want to make sure all of your loops have a <code>:key</code> on them.
-  </p>
+  <p>And it would render:</p>
+  <ul>
+    <li v-for="month in months" :key="month">{{ month }}</li>
+  </ul>
   <p>If months was an array of object then it would look something like this</p>
   <code v-pre
-    >&lt;li v-for="month in months" :key="month"&gt;{{
+    >&lt;li v-for="month in monthObjects" :key="month"&gt;{{
       month.name
     }}&lt;/li&gt;</code
   >
+  <p>And it would render:</p>
+  <ul>
+    <li v-for="month in monthObjects" :key="month">{{ month.name }}</li>
+  </ul>
+  <hr />
+  <p>
+    <strong>Note:</strong>
+    The <code>:key</code> next to the <code>v-for</code>. That is a special Vue
+    uses to properly track and change elements when the data updates. You'll
+    want to make sure all of your loops have a <code>:key</code> on them.
+  </p>
 </template>
+
+<script setup>
+const months = ['January', 'February', 'March', 'April'];
+const monthObjects = [
+  {
+    name: 'January'
+  },
+  {
+    name: 'February'
+  },
+  {
+    name: 'March'
+  },
+  {
+    name: 'April'
+  }
+];
+</script>
