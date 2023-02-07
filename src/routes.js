@@ -6,6 +6,7 @@ import Components from './pages/components/Components.vue';
 import Lifecycle from './pages/lifecycle/Lifecycle.vue';
 import TodoComponent from './pages/todoComponent/TodoComponent.vue';
 import StoreComponent from './pages/storeComponent/StoreComponent.vue';
+import sandbox from './pages/sandbox/Sandbox.vue';
 
 const routes = [
   {
@@ -60,6 +61,14 @@ const routes = [
     meta: {
       displayName: 'Pinia Store',
       showUsername: true
+    }
+  },
+  {
+    path: '/sandbox',
+    name: 'sandbox',
+    component: sandbox,
+    meta: {
+      displayName: 'Sandbox'
     }
   }
 ];
